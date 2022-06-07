@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.Episodio;
 import logica.Heroe;
+import logica.Personaje;
 import logica.Serie;
 
 /**
@@ -85,7 +86,7 @@ public class VistaSerie extends javax.swing.JFrame {
         descripcionAtaqueVillano = new javax.swing.JTextArea();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        listEnemigoVillano = new javax.swing.JComboBox<>();
         jButton3 = new javax.swing.JButton();
         listaDeEpisodios = new javax.swing.JComboBox<>();
 
@@ -108,9 +109,16 @@ public class VistaSerie extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.Object.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(tablaDeEpisodios);
@@ -368,7 +376,7 @@ public class VistaSerie extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(nombreVillano, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
                     .addComponent(identidadSecretaVillano)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(listEnemigoVillano, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton3)
@@ -390,7 +398,7 @@ public class VistaSerie extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(listEnemigoVillano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -401,6 +409,12 @@ public class VistaSerie extends javax.swing.JFrame {
         );
 
         jTabbedPane3.addTab("Villano", jPanel5);
+
+        listaDeEpisodios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaDeEpisodiosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -432,7 +446,7 @@ public class VistaSerie extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelPersonaes, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+                    .addComponent(jPanelPersonaes)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nombreSerie)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -458,7 +472,8 @@ public class VistaSerie extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        // TODO Guardar el villano como se guarda el héroe.
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -467,13 +482,19 @@ public class VistaSerie extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
+        // obtener episodio
+        String episodioSeleccionado = (String) listaDeEpisodios.getSelectedItem();
+        Episodio episodio = this.serie.getEpisodioPorNombre(episodioSeleccionado);
+        if(episodio == null){
+            JOptionPane.showMessageDialog(null, "Serie no encontrada");
+        }
         // obtenemos nombre del heroe
         String nombre = nombreHeroe.getText();
         if (nombre.equals("")) {
             JOptionPane.showMessageDialog(null, "Falta nombre de heroe", "Nombre", 3);
             return;
         }
+        
 
         // obtener identidad secreta
         String identidadSecreta = identidadSecretaHeroe.getText();
@@ -495,9 +516,25 @@ public class VistaSerie extends javax.swing.JFrame {
         // obtener la debilidad
         String debilidad = debilidadHeroe.getText();
 
-        Heroe heroe = new Heroe(debilidad, perteneceALiga.isSelected(), nombre, identidadSecreta);
+        Heroe heroe = new Heroe(debilidad, perteneceALiga.isSelected(), nombre, identidadSecreta, habilidades);
+        
+        episodio.agregarPersonaje(heroe);
+        
+        this.limpiarFormularioHeroe();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void limpiarFormularioHeroe(){
+        nombreHeroe.setText("");
+        identidadSecretaHeroe.setText("");
+        debilidadHeroe.setText("");
+        perteneceALiga.setSelected(false);
+        this.recargarEpisodios();
+    }
+    
+    public void limpiarFormularioVillano(){
+        this.recargarEpisodios();
+    }
+    
     private void listaHabildadesHeroeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaHabildadesHeroeMouseClicked
         // se obtiene el index de la fila
     }//GEN-LAST:event_listaHabildadesHeroeMouseClicked
@@ -536,7 +573,27 @@ public class VistaSerie extends javax.swing.JFrame {
         nombreEpisodio.setText("");
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    public void recargarEpisodios(){
+    private void listaDeEpisodiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDeEpisodiosActionPerformed
+        // TODO add your handling code here:
+        String nombreEpisodio = (String)listaDeEpisodios.getSelectedItem();
+        if(nombreEpisodio == null){
+            return ;
+        }
+        listEnemigoVillano.removeAllItems();
+        this.recargarListaHeroes();
+    }//GEN-LAST:event_listaDeEpisodiosActionPerformed
+
+    private void recargarListaHeroes(){
+        Episodio episodio = serie.getEpisodioPorNombre((String) listaDeEpisodios.getSelectedItem());
+        
+        listEnemigoVillano.removeAllItems();
+        
+        for(Personaje personaje: episodio.getHeroes()){
+            listEnemigoVillano.addItem(personaje.getNombre());
+        }
+    }
+    
+    private void recargarEpisodios(){
         DefaultTableModel tabla = (DefaultTableModel) tablaDeEpisodios.getModel();
         tabla.setRowCount(0);
         
@@ -596,7 +653,6 @@ public class VistaSerie extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -619,6 +675,7 @@ public class VistaSerie extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JComboBox<String> listEnemigoVillano;
     private javax.swing.JComboBox<String> listaDeEpisodios;
     private javax.swing.JTable listaHabildadesHeroe;
     private javax.swing.JTextField nombreEpisodio;

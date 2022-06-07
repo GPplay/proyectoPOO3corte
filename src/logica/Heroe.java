@@ -26,10 +26,11 @@ public class Heroe extends Personaje{
      * @param nombre
      * @param identidadSecreta
      */
-    public Heroe(String descripcionDebilidad, boolean perteneceJL, String nombre, String identidadSecreta) {
+    public Heroe(String descripcionDebilidad, boolean perteneceJL, String nombre, String identidadSecreta, ArrayList descripcionPoder) {
         super(nombre, identidadSecreta);
         this.descripcionDebilidad = descripcionDebilidad;
         this.perteneceJL = perteneceJL;
+        this.descripcionPoder = descripcionPoder;
         villanos = new ArrayList();
     }
    
