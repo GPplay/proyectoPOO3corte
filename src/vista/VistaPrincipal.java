@@ -26,7 +26,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         manejaSerie = new ManejaSerie();
         
-        manejaSerie.agregarSerie("wilmer", 1996);
+        manejaSerie.agregarSerie("gybramYelkin", 2002);
         this.rellenarTabla();
     }
 

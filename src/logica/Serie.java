@@ -45,7 +45,7 @@ public class Serie {
     public ArrayList<Episodio> getEpisodios() {
         return this.episodios;
     }
-
+    
     public Episodio getEpisodioPorNombre(String nombre){
         for(Episodio episodio: this.episodios){
             if(episodio.getNombre().toLowerCase().equals(nombre.toLowerCase())){

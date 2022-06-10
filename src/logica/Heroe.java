@@ -16,7 +16,7 @@ public class Heroe extends Personaje{
    private ArrayList<String>descripcionPoder = new ArrayList();
    private String descripcionDebilidad;
    private boolean perteneceJL; 
-   private final double  COBRO_POR_VILLANO = 200000.0;
+   private final int  COBRO_POR_VILLANO = 200000;
    private final ArrayList<Villano> villanos;
 
     /**
@@ -60,6 +60,9 @@ public class Heroe extends Personaje{
     
     public ArrayList<Villano> getVillanos() {
         return villanos;
+    }
+    public void agregarEnemigo(Villano villano){
+    this.villanos.add(villano);
     }
     
     @Override

@@ -3,10 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/elkin-d/Documents/ProyectoFinalPoo/proyectoPOO3corte/src/logica/Episodio.java</file>
             <file>file:/home/elkin-d/Documents/ProyectoFinalPoo/proyectoPOO3corte/src/vista/VistaSerie.java</file>
             <file>file:/home/elkin-d/Documents/ProyectoFinalPoo/proyectoPOO3corte/src/vista/Main.java</file>
             <file>file:/home/elkin-d/Documents/ProyectoFinalPoo/proyectoPOO3corte/src/vista/VistaPrincipal.java</file>
+=======
+            <file>file:/C:/Users/Gybram/Desktop/trabajo%20final%203corte%20de%20POO/proyectoPOO3corte/src/vista/VistaSerie.java</file>
+            <file>file:/C:/Users/Gybram/Desktop/trabajo%20final%203corte%20de%20POO/proyectoPOO3corte/src/logica/Heroe.java</file>
+            <file>file:/C:/Users/Gybram/Desktop/trabajo%20final%203corte%20de%20POO/proyectoPOO3corte/src/logica/Serie.java</file>
+            <file>file:/C:/Users/Gybram/Desktop/trabajo%20final%203corte%20de%20POO/proyectoPOO3corte/src/logica/Villano.java</file>
+            <file>file:/C:/Users/Gybram/Desktop/trabajo%20final%203corte%20de%20POO/proyectoPOO3corte/src/logica/Episodio.java</file>
+            <file>file:/C:/Users/Gybram/Desktop/trabajo%20final%203corte%20de%20POO/proyectoPOO3corte/src/vista/VistaPrincipal.java</file>
+>>>>>>> a98befe0f9f7c52bdb0efd8843de8bb3ed80a151
         </group>
     </open-files>
 </project-private>
