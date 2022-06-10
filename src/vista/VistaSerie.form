@@ -48,7 +48,7 @@
                   <Component id="cantidadDeEpisodios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelCantEpisodios" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
               <Component id="jPanelPestañasEpisodio" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -75,7 +75,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel7">
+        <Container class="javax.swing.JPanel" name="jPanelEpisodios">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Episodios">
@@ -205,7 +205,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="jPanelAgregarPersonaje">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Agregar Personaje">
@@ -221,7 +221,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jTabbedAgregarPersonaje" max="32767" attributes="0"/>
-                          <Component id="listaDeEpisodios" max="32767" attributes="0"/>
+                          <Component id="ComboBoxListaDeEpisodios" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -231,7 +231,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="listaDeEpisodios" min="-2" max="-2" attributes="0"/>
+                      <Component id="ComboBoxListaDeEpisodios" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jTabbedAgregarPersonaje" min="-2" pref="459" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -259,13 +259,13 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTabbedPane4" max="32767" attributes="0"/>
+                                  <Component id="jTabbedHabilidadHeroe" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Component id="btnGuardarHeroe" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="perteneceALiga" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ChechBoxPerteneceALiga" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
@@ -298,9 +298,9 @@
                                   <Component id="identidadSecretaHeroe" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="perteneceALiga" min="-2" max="-2" attributes="0"/>
+                              <Component id="ChechBoxPerteneceALiga" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTabbedPane4" min="-2" pref="300" max="-2" attributes="0"/>
+                              <Component id="jTabbedHabilidadHeroe" min="-2" pref="300" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnGuardarHeroe" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -316,12 +316,12 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="nombreHeroe">
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="perteneceALiga">
+                    <Component class="javax.swing.JCheckBox" name="ChechBoxPerteneceALiga">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Pertenece a la liga de la justicia"/>
                       </Properties>
                     </Component>
-                    <Container class="javax.swing.JTabbedPane" name="jTabbedPane4">
+                    <Container class="javax.swing.JTabbedPane" name="jTabbedHabilidadHeroe">
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                       <SubComponents>
@@ -339,7 +339,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnAgregarHabilidadHeroe" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace pref="349" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -352,7 +352,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnAgregarHabilidadHeroe" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jScrollPane3" pref="226" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -361,12 +361,12 @@
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Component class="javax.swing.JButton" name="jButton2">
+                            <Component class="javax.swing.JButton" name="btnAgregarHabilidadHeroe">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Agregar Habilidad"/>
                               </Properties>
                               <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarHabilidadHeroeActionPerformed"/>
                               </Events>
                             </Component>
                             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -609,14 +609,14 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JComboBox" name="listaDeEpisodios">
+            <Component class="javax.swing.JComboBox" name="ComboBoxListaDeEpisodios">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listaDeEpisodiosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComboBoxListaDeEpisodiosActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

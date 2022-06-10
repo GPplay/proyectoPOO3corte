@@ -41,8 +41,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaEpisodios = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tablaSeries = new javax.swing.JTable();
+        btnAgregarSerie = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,7 +57,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        tablaEpisodios.setModel(new javax.swing.table.DefaultTableModel(
+        tablaSeries.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -80,18 +80,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tablaEpisodios.getTableHeader().setReorderingAllowed(false);
-        tablaEpisodios.addMouseListener(new java.awt.event.MouseAdapter() {
+        tablaSeries.getTableHeader().setReorderingAllowed(false);
+        tablaSeries.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablaEpisodiosMouseClicked(evt);
+                tablaSeriesMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tablaEpisodios);
+        jScrollPane1.setViewportView(tablaSeries);
 
-        jButton1.setText("Agregar Serie");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarSerie.setText("Agregar Serie");
+        btnAgregarSerie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarSerieActionPerformed(evt);
             }
         });
 
@@ -103,7 +103,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btnAgregarSerie))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -116,7 +116,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 47, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(btnAgregarSerie)
                         .addGap(27, 27, 27)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -125,7 +125,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAgregarSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarSerieActionPerformed
         // TODO add your handling code here:
 
         String nombreSerie = JOptionPane.showInputDialog(null, "Escriba nombre de la serie");
@@ -135,15 +135,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         this.rellenarTabla();
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAgregarSerieActionPerformed
 
     public void rellenarTabla() {
         // borra elementos existentes en la tabla
-        DefaultTableModel tabla = (DefaultTableModel) tablaEpisodios.getModel();
+        DefaultTableModel tabla = (DefaultTableModel) tablaSeries.getModel();
         tabla.setRowCount(0);
         
         // rellena nuevamente la tabla con la el ArrayList de episodios
-        DefaultTableModel model = (DefaultTableModel) tablaEpisodios.getModel();
+        DefaultTableModel model = (DefaultTableModel) tablaSeries.getModel();
         
         for (Serie serie : this.manejaSerie.getSeries()) {
             // TODO: averiguar que es object, y como se llena una JTable
@@ -152,9 +152,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
         }
     }
     
-    private void tablaEpisodiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEpisodiosMouseClicked
+    private void tablaSeriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaSeriesMouseClicked
         // se obtiene el index de la fila
-        int index = tablaEpisodios.getSelectedRow();
+        int index = tablaSeries.getSelectedRow();
         
         // del ArrayList de series, se obtiene la serie a ver usando el index previamente obtenido
         Serie serie = this.manejaSerie.getSeries().get(index);
@@ -162,7 +162,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         // se crea una nueva vista de detalle de serie pasando como parametro la serie previamente obtenida
         VistaSerie vistaSerie = new VistaSerie(serie);
         vistaSerie.setVisible(true);
-    }//GEN-LAST:event_tablaEpisodiosMouseClicked
+    }//GEN-LAST:event_tablaSeriesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -170,9 +170,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAgregarSerie;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablaEpisodios;
+    private javax.swing.JTable tablaSeries;
     // End of variables declaration//GEN-END:variables
 }
