@@ -12,6 +12,7 @@ import logica.Episodio;
 import logica.Heroe;
 import logica.Personaje;
 import logica.Serie;
+import logica.Villano;
 
 /**
  *
@@ -500,10 +501,15 @@ public class VistaSerie extends javax.swing.JFrame {
         
         //obtener Heroe enemigo
         String nombreHeroeABuscar= (String)listEnemigoVillano.getSelectedItem();
+        Episodio ep = this.serie.getEpisodioPorNombre(episodioSeleccionado);
+        Heroe heroe  = (Heroe) ep.buscarHeroe(nombreHeroeABuscar);//castear como un parseInt
         
-        /*
-        Villano villano= new (DescripcionAtaqueVillano, checkBoxUsaArma.isSelected(),heroeEnemigo, nombre, IdentidadSecreta);
-        episodio.agregarPersonaje(villano);*/
+        
+        Villano villano= new Villano(DescripAtaqueVillano, checkBoxUsaArma.isSelected(), heroe, nombre, identidadSecreta);
+        episodio.agregarPersonaje(villano);
+        heroe.agregarEnemigo(villano);
+        this.limpiarFormularioVillano();
+        
     }//GEN-LAST:event_btnGuardarVillanoActionPerformed
 
     private void checkBoxUsaArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxUsaArmaActionPerformed
@@ -558,10 +564,17 @@ public class VistaSerie extends javax.swing.JFrame {
         identidadSecretaHeroe.setText("");
         debilidadHeroe.setText("");
         perteneceALiga.setSelected(false);
+        DefaultTableModel tabla = (DefaultTableModel) listaHabildadesHeroe.getModel();
+        tabla.setRowCount(0);
         this.recargarEpisodios();
     }
     
     public void limpiarFormularioVillano(){
+        nombreVillano.setText("");
+        identidadSecretaVillano.setText("");
+        checkBoxUsaArma.setSelected(false);
+        descripcionAtaqueVillano.setText("");
+        listEnemigoVillano.setSelectedIndex(0);
         this.recargarEpisodios();
     }
     

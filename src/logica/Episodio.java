@@ -38,7 +38,7 @@ public class Episodio {
 
         try {
             for (Personaje personaje : personajes) {
-                precioEpisodio = personaje.calcularSueldo();
+                precioEpisodio += personaje.calcularSueldo();
             }
         } catch (Exception e) {
             return 0;
@@ -67,6 +67,15 @@ public class Episodio {
         }
 
         return villanos;
+    }
+    public Personaje buscarHeroe(String nombre){
+        ArrayList<Personaje>heroe = this.getHeroes();
+        for (Personaje personaje : heroe){
+            if (personaje.getNombre().toLowerCase().equals(nombre.toLowerCase())) {
+                return personaje;
+            }
+        }
+        return null;
     }
 
     @Override
