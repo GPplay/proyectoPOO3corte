@@ -602,6 +602,14 @@ public class VistaSerie extends javax.swing.JFrame {
         // TODO add your handling code here:
         String nombre = nombreEpisodio.getText();
         
+        //validamos que los nombres de la serie no se repitan XD
+        for(Episodio episodio : this.serie.getEpisodios()){
+            if(episodio.getNombre().equals(nombre) ){
+              JOptionPane.showMessageDialog(null, "el nombre de un episodio No se puede repetir");
+                
+            }
+        }
+        
         if(nombre.equals("")){
             JOptionPane.showMessageDialog(null, "Escriba el nombre del episodio");
             return;
@@ -618,7 +626,7 @@ public class VistaSerie extends javax.swing.JFrame {
 
     private void listaDeEpisodiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDeEpisodiosActionPerformed
         // TODO add your handling code here:
-        String nombreEpisodio = (String)listaDeEpisodios.getSelectedItem();
+        String nombreEpisodio = (String)listaDeEpisodios.getSelectedItem();//validar de que un episodio no se repita
         if(nombreEpisodio == null){
             return ;
         }
