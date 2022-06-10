@@ -160,8 +160,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         Serie serie = this.manejaSerie.getSeries().get(index);
         
         // se crea una nueva vista de detalle de serie pasando como parametro la serie previamente obtenida
-        VistaSerie vistaSerie = new VistaSerie(serie);
-        vistaSerie.setVisible(true);
+        new VistaSerie(serie).setVisible(true);
     }//GEN-LAST:event_tablaSeriesMouseClicked
 
     /**

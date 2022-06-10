@@ -602,24 +602,28 @@ public class VistaSerie extends javax.swing.JFrame {
         // TODO add your handling code here:
         String nombre = TextFieldNombreEpisodio.getText();
         
-        //validamos que los nombres de la serie no se repitan XD
-        for(Episodio ep : this.serie.getEpisodios()){
-            if(ep.getNombre().equalsIgnoreCase((nombre))){
-              JOptionPane.showMessageDialog(null, "el nombre de un episodio No se puede repetir");
-            this.serie.getEpisodios().remove(ep);
-              //tenemos que hacer que esta vaina haga que el episodio no se ponga
-            }
-        }
-        
         if(nombre.equals("")){
             JOptionPane.showMessageDialog(null, "Escriba el nombre del episodio");
             return;
         }
         
-        Episodio episodio = new Episodio(nombre);
-        serie.agregarEpisodio(episodio);
-        this.recargarEpisodios();
-        TextFieldNombreEpisodio.setText("");
+            //validamos que los nombres de la serie no se repitan XD
+            
+        boolean existencia = false;   
+        for(Episodio ep : this.serie.getEpisodios()){
+            if(ep.getNombre().equalsIgnoreCase((nombre))){
+              JOptionPane.showMessageDialog(null, "el nombre de un episodio No se puede repetir"); 
+              existencia = true;
+            }
+            
+        }
+        if(existencia == false){
+            Episodio episodio = new Episodio(nombre);
+            serie.agregarEpisodio(episodio);
+            this.recargarEpisodios();
+            TextFieldNombreEpisodio.setText("");
+        }
+            
     }//GEN-LAST:event_btnGuardarEpisodioActionPerformed
 
     private void ComboBoxListaDeEpisodiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxListaDeEpisodiosActionPerformed
