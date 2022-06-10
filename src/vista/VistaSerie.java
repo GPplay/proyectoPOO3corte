@@ -603,10 +603,11 @@ public class VistaSerie extends javax.swing.JFrame {
         String nombre = TextFieldNombreEpisodio.getText();
         
         //validamos que los nombres de la serie no se repitan XD
-        for(Episodio episodio : this.serie.getEpisodios()){
-            if(episodio.getNombre().equals(nombre) ){
+        for(Episodio ep : this.serie.getEpisodios()){
+            if(ep.getNombre().equalsIgnoreCase((nombre))){
               JOptionPane.showMessageDialog(null, "el nombre de un episodio No se puede repetir");
-                
+            this.serie.getEpisodios().remove(ep);
+              //tenemos que hacer que esta vaina haga que el episodio no se ponga
             }
         }
         
@@ -616,11 +617,8 @@ public class VistaSerie extends javax.swing.JFrame {
         }
         
         Episodio episodio = new Episodio(nombre);
-        
         serie.agregarEpisodio(episodio);
-        
         this.recargarEpisodios();
-        
         TextFieldNombreEpisodio.setText("");
     }//GEN-LAST:event_btnGuardarEpisodioActionPerformed
 
