@@ -73,7 +73,7 @@ public class VistaSerie extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         debilidadHeroe = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        btnGuardarHeroe = new javax.swing.JButton();
         identidadSecretaHeroe = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -84,10 +84,10 @@ public class VistaSerie extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         descripcionAtaqueVillano = new javax.swing.JTextArea();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        checkBoxUsaArma = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         listEnemigoVillano = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
+        btnGuardarVillano = new javax.swing.JButton();
         listaDeEpisodios = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -277,10 +277,10 @@ public class VistaSerie extends javax.swing.JFrame {
 
         jTabbedPane4.addTab("Debilidad", jPanel3);
 
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarHeroe.setText("Guardar");
+        btnGuardarHeroe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnGuardarHeroeActionPerformed(evt);
             }
         });
 
@@ -296,7 +296,7 @@ public class VistaSerie extends javax.swing.JFrame {
                     .addComponent(jTabbedPane4)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(btnGuardarHeroe))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(perteneceALiga)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -326,7 +326,7 @@ public class VistaSerie extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnGuardarHeroe)
                 .addContainerGap())
         );
 
@@ -342,19 +342,19 @@ public class VistaSerie extends javax.swing.JFrame {
         descripcionAtaqueVillano.setRows(5);
         jScrollPane5.setViewportView(descripcionAtaqueVillano);
 
-        jCheckBox1.setText("Usa arma");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        checkBoxUsaArma.setText("Usa arma");
+        checkBoxUsaArma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                checkBoxUsaArmaActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Enemigo:");
 
-        jButton3.setText("Guardar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarVillano.setText("Guardar");
+        btnGuardarVillano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnGuardarVillanoActionPerformed(evt);
             }
         });
 
@@ -370,7 +370,7 @@ public class VistaSerie extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel5)
-                    .addComponent(jCheckBox1)
+                    .addComponent(checkBoxUsaArma)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -379,7 +379,7 @@ public class VistaSerie extends javax.swing.JFrame {
                     .addComponent(listEnemigoVillano, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(btnGuardarVillano)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -394,7 +394,7 @@ public class VistaSerie extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(identidadSecretaVillano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(checkBoxUsaArma)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -404,7 +404,7 @@ public class VistaSerie extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(btnGuardarVillano)
                 .addContainerGap())
         );
 
@@ -471,22 +471,52 @@ public class VistaSerie extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO Guardar el villano como se guarda el héroe.
+    private void btnGuardarVillanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarVillanoActionPerformed
+        String episodioSeleccionado = (String) listaDeEpisodios.getSelectedItem();
+        Episodio episodio = this.serie.getEpisodioPorNombre(episodioSeleccionado);
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+        if(episodio == null){
+            JOptionPane.showMessageDialog(null, "Episodio no encontrado");
+        }
+        // obtenemos nombre del villano
+        String nombre = nombreVillano.getText();
+        if (nombre.equals("")) {
+            JOptionPane.showMessageDialog(null, "Falta nombre del Villano", "Nombre", 2);
+            return;
+        }
+        // Obtenemos Id. secreta del Villano
+        String identidadSecreta = identidadSecretaVillano.getText();
+        if (identidadSecreta.equals("")) {
+            JOptionPane.showMessageDialog(null, "Falta la identidad del Villano", "Nombre", 2);
+            return;
+        }
+        
+        //obtener Descripcion Ataque  villano
+        String DescripAtaqueVillano = descripcionAtaqueVillano.getText();
+        if(DescripAtaqueVillano.equals("")){
+            JOptionPane.showMessageDialog(null, "Debe introducir una descripcion de ataque", "Nombre", 2);
+            return;
+        }
+        
+        //obtener Heroe enemigo
+        String nombreHeroeABuscar= (String)listEnemigoVillano.getSelectedItem();
+        
+        /*
+        Villano villano= new (DescripcionAtaqueVillano, checkBoxUsaArma.isSelected(),heroeEnemigo, nombre, IdentidadSecreta);
+        episodio.agregarPersonaje(villano);*/
+    }//GEN-LAST:event_btnGuardarVillanoActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void checkBoxUsaArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxUsaArmaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_checkBoxUsaArmaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnGuardarHeroeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarHeroeActionPerformed
         // TODO add your handling code here:
         // obtener episodio
         String episodioSeleccionado = (String) listaDeEpisodios.getSelectedItem();
         Episodio episodio = this.serie.getEpisodioPorNombre(episodioSeleccionado);
         if(episodio == null){
-            JOptionPane.showMessageDialog(null, "Serie no encontrada");
+            JOptionPane.showMessageDialog(null, "Episodio no encontrada");
         }
         // obtenemos nombre del heroe
         String nombre = nombreHeroe.getText();
@@ -521,7 +551,7 @@ public class VistaSerie extends javax.swing.JFrame {
         episodio.agregarPersonaje(heroe);
         
         this.limpiarFormularioHeroe();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnGuardarHeroeActionPerformed
 
     public void limpiarFormularioHeroe(){
         nombreHeroe.setText("");
@@ -643,16 +673,16 @@ public class VistaSerie extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGuardarHeroe;
+    private javax.swing.JButton btnGuardarVillano;
     private javax.swing.JLabel cantidadDeEpisodios;
+    private javax.swing.JCheckBox checkBoxUsaArma;
     private javax.swing.JTextArea debilidadHeroe;
     private javax.swing.JTextArea descripcionAtaqueVillano;
     private javax.swing.JTextField identidadSecretaHeroe;
     private javax.swing.JTextField identidadSecretaVillano;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
