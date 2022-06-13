@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Gybram
  */
-public class ManejaSerie {
+public class ManejaSerie     {
     private final ArrayList<Serie> series;
 
     public ManejaSerie() {
