@@ -53,9 +53,6 @@ public class VistaSerie extends javax.swing.JFrame {
         cantidadDeEpisodios = new javax.swing.JLabel();
         jLabelCantEpisodios = new javax.swing.JLabel();
         jPanelPestañasEpisodio = new javax.swing.JTabbedPane();
-        jPanelEpisodios = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaDeEpisodios = new javax.swing.JTable();
         jPanelAgregarEpisodio = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         TextFieldNombreEpisodio = new javax.swing.JTextField();
@@ -67,15 +64,15 @@ public class VistaSerie extends javax.swing.JFrame {
         nombreHeroe = new javax.swing.JTextField();
         ChechBoxPerteneceALiga = new javax.swing.JCheckBox();
         jTabbedHabilidadHeroe = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        debilidadHeroe = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         listaHabildadesHeroe = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         TextFieldHabilidadHeroe = new javax.swing.JTextArea();
         btnAgregarHabilidadHeroe = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        debilidadHeroe = new javax.swing.JTextArea();
         btnGuardarHeroe = new javax.swing.JButton();
         identidadSecretaHeroe = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -92,6 +89,9 @@ public class VistaSerie extends javax.swing.JFrame {
         listEnemigoVillano = new javax.swing.JComboBox<>();
         btnGuardarVillano = new javax.swing.JButton();
         ComboBoxListaDeEpisodios = new javax.swing.JComboBox<>();
+        jPanelEpisodios = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaDeEpisodios = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -100,50 +100,6 @@ public class VistaSerie extends javax.swing.JFrame {
         cantidadDeEpisodios.setText("0");
 
         jLabelCantEpisodios.setText("Cantidad de episodios:");
-
-        tablaDeEpisodios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Costo episodio"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tablaDeEpisodios);
-
-        javax.swing.GroupLayout jPanelEpisodiosLayout = new javax.swing.GroupLayout(jPanelEpisodios);
-        jPanelEpisodios.setLayout(jPanelEpisodiosLayout);
-        jPanelEpisodiosLayout.setHorizontalGroup(
-            jPanelEpisodiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEpisodiosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanelEpisodiosLayout.setVerticalGroup(
-            jPanelEpisodiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEpisodiosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanelPestañasEpisodio.addTab("Episodios", jPanelEpisodios);
 
         jLabel3.setText("Nombre:");
 
@@ -192,6 +148,29 @@ public class VistaSerie extends javax.swing.JFrame {
 
         ChechBoxPerteneceALiga.setText("Pertenece a la liga de la justicia");
 
+        debilidadHeroe.setColumns(20);
+        debilidadHeroe.setRows(5);
+        jScrollPane4.setViewportView(debilidadHeroe);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedHabilidadHeroe.addTab("Debilidad", jPanel3);
+
         listaHabildadesHeroe.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -237,62 +216,47 @@ public class VistaSerie extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregarHabilidadHeroe))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAgregarHabilidadHeroe)))
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
-        jTabbedHabilidadHeroe.addTab("Lista de habilidades", jPanel6);
-
-        debilidadHeroe.setColumns(20);
-        debilidadHeroe.setRows(5);
-        jScrollPane4.setViewportView(debilidadHeroe);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedHabilidadHeroe.addTab("Debilidad", jPanel3);
-
         btnGuardarHeroe.setText("Guardar");
         btnGuardarHeroe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarHeroeActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnGuardarHeroe))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAgregarHabilidadHeroe))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(15, 15, 15))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(btnAgregarHabilidadHeroe))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(btnGuardarHeroe)
+                .addContainerGap())
+        );
+
+        jTabbedHabilidadHeroe.addTab("Lista de habilidades", jPanel6);
 
         jLabel6.setText("Identidad Secreta:");
 
@@ -312,10 +276,6 @@ public class VistaSerie extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nombreHeroe, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
                             .addComponent(identidadSecretaHeroe)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnGuardarHeroe)
-                        .addGap(18, 18, 18))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(ChechBoxPerteneceALiga)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -336,9 +296,7 @@ public class VistaSerie extends javax.swing.JFrame {
                 .addComponent(ChechBoxPerteneceALiga)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedHabilidadHeroe, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(163, 163, 163)
-                .addComponent(btnGuardarHeroe)
-                .addContainerGap())
+                .addGap(204, 204, 204))
         );
 
         jTabbedAgregarPersonaje.addTab("Heroe", jPanel4);
@@ -414,9 +372,9 @@ public class VistaSerie extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addComponent(btnGuardarVillano)
-                .addContainerGap())
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jTabbedAgregarPersonaje.addTab("Villano", jPanel5);
@@ -434,8 +392,8 @@ public class VistaSerie extends javax.swing.JFrame {
             .addGroup(jPanelAgregarPersonajeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelAgregarPersonajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedAgregarPersonaje)
-                    .addComponent(ComboBoxListaDeEpisodios, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ComboBoxListaDeEpisodios, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTabbedAgregarPersonaje))
                 .addContainerGap())
         );
         jPanelAgregarPersonajeLayout.setVerticalGroup(
@@ -449,6 +407,50 @@ public class VistaSerie extends javax.swing.JFrame {
         );
 
         jPanelPestañasEpisodio.addTab("Agregar Personaje", jPanelAgregarPersonaje);
+
+        tablaDeEpisodios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Costo episodio"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tablaDeEpisodios);
+
+        javax.swing.GroupLayout jPanelEpisodiosLayout = new javax.swing.GroupLayout(jPanelEpisodios);
+        jPanelEpisodios.setLayout(jPanelEpisodiosLayout);
+        jPanelEpisodiosLayout.setHorizontalGroup(
+            jPanelEpisodiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEpisodiosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanelEpisodiosLayout.setVerticalGroup(
+            jPanelEpisodiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEpisodiosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanelPestañasEpisodio.addTab("Episodios", jPanelEpisodios);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
