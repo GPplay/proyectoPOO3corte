@@ -7,10 +7,7 @@ package logica;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Gybram
- */
+
 public class Episodio {
 
     private String nombre;

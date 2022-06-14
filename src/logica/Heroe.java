@@ -19,13 +19,7 @@ public class Heroe extends Personaje{
    private final int  COBRO_POR_VILLANO = 200000;
    private final ArrayList<Villano> villanos;
 
-    /**
-     *
-     * @param descripcionDebilidad
-     * @param perteneceJL
-     * @param nombre
-     * @param identidadSecreta
-     */
+
     public Heroe(String descripcionDebilidad, boolean perteneceJL, String nombre, String identidadSecreta, ArrayList descripcionPoder) {
         super(nombre, identidadSecreta);
         this.descripcionDebilidad = descripcionDebilidad;
