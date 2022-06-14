@@ -72,6 +72,13 @@ public class Heroe extends Personaje{
     
     @Override
     public String toString() {
-        return super.toString() + "\n Heroe{" + "descripcionPoder=" + descripcionPoder + ", descripcionDebilidad=" + descripcionDebilidad + ", perteneceJL=" + perteneceJL + '}';
+        String condicion;
+        if(perteneceJL==true){
+            condicion="Si";
+        }else{
+            condicion="No";
+        }
+        return super.toString() + "\n Es un: Heroe\n" + "Descripcion de Poder: " + descripcionPoder + "\ndescripcionDebilidad=" + descripcionDebilidad + 
+                "\nPertenece a la LJ: " + condicion +"\nSueldo: "+ calcularSueldo();
     }
 }

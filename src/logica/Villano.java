@@ -47,7 +47,13 @@ public class Villano extends Personaje{
 
     @Override
     public String toString() {
-        return super.toString() + "\n Villano{" + "descripcionAtaque=" + descripcionAtaque + ", usaArma=" + usaArma + ", enemigo=" + enemigo + '}';
+        String condicion;
+        if(usaArma==true){
+            condicion="Si";
+        }else{
+            condicion="No";
+        }
+        return super.toString() + "\n Es un:Villano" + "\nDescripcionAtaque:" + descripcionAtaque + "\nUsaArma:" + condicion + "\nEnemigo:" + enemigo.getNombre()+"\nSueldo:"+calcularSueldo();
     }
 
     @Override
