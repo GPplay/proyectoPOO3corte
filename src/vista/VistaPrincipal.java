@@ -155,11 +155,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         String nombreSerie = JOptionPane.showInputDialog(null, "Escriba nombre de la serie");
         String anioLanzamiento = JOptionPane.showInputDialog(null, "Año de lanzamiento");
-
-        this.manejaSerie.agregarSerie(nombreSerie, Integer.parseInt(anioLanzamiento));
-
-        this.rellenarTabla();
-
+        if(nombreSerie!=null & anioLanzamiento!=null){
+            
+            if(nombreSerie.isBlank()){
+               JOptionPane.showMessageDialog(null, "no puede quedar en blanco", "Nombre", 3);
+            }if(anioLanzamiento.isBlank()){
+                JOptionPane.showMessageDialog(null, "no puede quedar en blanco", "Año", 3);
+            }else{
+                this.manejaSerie.agregarSerie(nombreSerie, Integer.parseInt(anioLanzamiento));
+                this.rellenarTabla();
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "No se añadio ninguna serie!", "Alert", 3);
+ 
+        }  
     }//GEN-LAST:event_btnAgregarSerieActionPerformed
 
     public void rellenarTabla() {
