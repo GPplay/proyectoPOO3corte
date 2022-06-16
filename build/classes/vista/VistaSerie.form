@@ -264,20 +264,16 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jScrollPane2" min="-2" pref="201" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="btnAgregarHabilidadHeroe" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Component id="btnGuardarHeroe" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jScrollPane2" min="-2" pref="201" max="-2" attributes="0"/>
-                                                  <Component id="btnAgregarHabilidadHeroe" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace pref="69" max="32767" attributes="0"/>
-                                              <Component id="jScrollPane3" min="-2" pref="214" max="-2" attributes="0"/>
-                                          </Group>
                                       </Group>
+                                      <EmptySpace pref="37" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane3" min="-2" pref="214" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -289,16 +285,17 @@
                                           <Group type="102" attributes="0">
                                               <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                              <Component id="btnAgregarHabilidadHeroe" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="btnAgregarHabilidadHeroe" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnGuardarHeroe" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jScrollPane3" min="-2" pref="206" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="25" max="32767" attributes="0"/>
-                                      <Component id="btnGuardarHeroe" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace pref="55" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
